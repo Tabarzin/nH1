@@ -47,3 +47,7 @@ body {
   gap: 20px;
   width: 100%;
 }
+
+.flex .card {
+  flex-grow: 1;
+}
