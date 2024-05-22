@@ -41,6 +41,7 @@ body {
     justify-content: space-around;
     align-items: center;
     gap: 25px;
+    width: 80%;
     @media screen and (max-width: 858px) {
       display: none;
     }
