@@ -30,13 +30,20 @@ body {
   max-width: 1440px;
   display: flex;
   flex-direction: column;
+  display: flex;
+
   margin: 0 auto;
   padding: 40px;
+  align-items: center;
 
   &__images {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 25px;
+    @media screen and (max-width: 858px) {
+      display: none;
+    }
 
     &--container {
       display: flex;
@@ -51,8 +58,9 @@ body {
     }
 
     &--line {
-      width: 50px;
+      width: 150px;
       height: 1px;
+      margin: 0;
     }
   }
 }
@@ -60,6 +68,10 @@ body {
 .main__platforms {
   display: flex;
   gap: 20px;
+
+  @media screen and (max-width: 858px) {
+    flex-wrap: wrap;
+  }
 
   &-item {
     display: flex;
@@ -69,5 +81,13 @@ body {
     &--text {
       text-align: center;
     }
+  }
+}
+
+.small {
+  display: none;
+  @media screen and (max-width: 858px) {
+    display: flex;
+    margin: 0 auto;
   }
 }
