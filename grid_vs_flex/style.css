@@ -22,7 +22,8 @@ body {
 .grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  grid-template-areas: "a b c d e";
   width: 100%;
 }
 
@@ -40,6 +41,54 @@ body {
 
 .card p {
   font-size: 1rem;
+}
+
+.card1 {
+  grid-area: a;
+}
+
+.card2 {
+  grid-area: b;
+}
+
+.card3 {
+  grid-area: c;
+}
+
+.card4 {
+  grid-area: d;
+}
+
+.card5 {
+  grid-area: e;
+}
+
+@media (max-width: 1182px) {
+  .grid {
+    grid-template-areas:
+      "a b c d"
+      "e e e e";
+  }
+}
+@media (max-width: 836px) {
+  .grid {
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e e";
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e";
+  }
 }
 
 .flex {
