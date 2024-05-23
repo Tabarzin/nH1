@@ -9,22 +9,74 @@ body {
   padding: 20px;
 }
 
+.h2 {
+  margin-bottom: 10px;
+}
 .main {
   padding: 20px;
-  display: grid;
-  place-items: center;
   min-height: 100vh;
   max-width: 1440px;
-  gap: 20px;
   margin: 0 auto;
 }
 
 .grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  margin-bottom: 50px;
+}
 
-  grid-template-areas: "a b c d e";
-  width: 100%;
+@media (max-width: 1250px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .card5 {
+    grid-column: 1/5;
+  }
+}
+
+@media (max-width: 1030px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+  .card1,
+  .card2,
+  .card3 {
+    grid-column: span 2;
+  }
+  .card4,
+  .card5 {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 780px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    grid-column: span 3;
+  }
+  .card5 {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 403px) {
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5 {
+    grid-column: span 6;
+  }
 }
 
 .card {
@@ -41,54 +93,6 @@ body {
 
 .card p {
   font-size: 1rem;
-}
-
-.card1 {
-  grid-area: a;
-}
-
-.card2 {
-  grid-area: b;
-}
-
-.card3 {
-  grid-area: c;
-}
-
-.card4 {
-  grid-area: d;
-}
-
-.card5 {
-  grid-area: e;
-}
-
-@media (max-width: 1182px) {
-  .grid {
-    grid-template-areas:
-      "a b c d"
-      "e e e e";
-  }
-}
-@media (max-width: 836px) {
-  .grid {
-    grid-template-areas:
-      "a b"
-      "c d"
-      "e e";
-  }
-}
-
-@media (max-width: 500px) {
-  .grid {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-      "a"
-      "b"
-      "c"
-      "d"
-      "e";
-  }
 }
 
 .flex {
